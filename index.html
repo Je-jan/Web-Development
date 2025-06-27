@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development - Landing</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS for animations and general styling */
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem; /* Add some padding for smaller screens */
+            box-sizing: border-box; /* Ensure padding is included in width/height */
+        }
 
+        /* Basic animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            0%, 20%, 40%, 60%, 80%, 100% {
+                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+            0% {
+                opacity: 0;
+                transform: scale3d(0.3, 0.3, 0.3);
+            }
+            20% {
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+            40% {
+                transform: scale3d(0.9, 0.9, 0.9);
+            }
+            60% {
+                opacity: 1;
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+            80% {
+                transform: scale3d(0.97, 0.97, 0.97);
+            }
+            100% {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        .animate-fade-in-down {
+            animation: fadeInDown 0.6s ease-out forwards;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .animate-bounce-in {
+            animation: bounceIn 0.8s ease-out forwards;
+        }
+
+        /* Delay for sequential animations */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <div class="max-w-2xl w-full">
+        <div class="bg-white p-8 rounded-lg shadow-xl w-full text-center border-t-4 border-blue-500">
+            <h1 class="text-4xl font-extrabold text-gray-800 mb-4 animate-fade-in-down">
+                Web Development
+            </h1>
+            <p class="text-lg text-gray-600 mb-6 leading-relaxed animate-fade-in">
+                Unlock the secrets of modern web development with our comprehensive guide designed specifically for beginners. From HTML basics to responsive design, this resource covers everything you need to start building amazing websites today!
+            </p>
+            <p class="text-md text-gray-500 mb-8 animate-fade-in delay-100">
+                Get ready to transform your ideas into interactive web experiences!
+            </p>
+            <button id="downloadButton"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 animate-bounce-in">
+                Download Your Free Guide
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('downloadButton').addEventListener('click', function() {
+            // Redirect to the details page (assuming 'details.html' is the filename)
+            window.location.href = 'details.html';
+        });
+    </script>
+</body>
+</html>
